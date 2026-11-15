@@ -1,3 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
-
+@import '@fontsource/cairo/index.css';
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --color-primary: #1769E8;
+  --color-primary-hover: #0F56C8;
+  --color-primary-light: #EBF2FE;
+
+  --color-navy-sidebar: #102B55;
+  --color-navy-active: #1A3E75;
+  --color-navy-deep: #0B1F3A;
+
+  --color-app-bg: #F4F7FC;
+  --color-surface: #FFFFFF;
+  --color-subtle: #F8FAFD;
+
+  --color-text-main: #172B4D;
+  --color-text-muted: #718096;
+  --color-text-light: #A0AEC0;
+
+  --color-border-main: #E4EAF3;
+  --color-border-subtle: #EDF2F7;
+
+  --color-success: #159A72;
+  --color-success-light: #E8F8F3;
+  --color-warning: #E99A20;
+  --color-warning-light: #FEF7EB;
+  --color-danger: #DC5353;
+  --color-danger-light: #FDF1F1;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border-main);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-app-bg);
+    color: var(--color-text-main);
+    direction: rtl;
+    text-align: right;
+  }
+
+  ::selection {
+    background-color: #1769E8;
+    color: #FFFFFF;
+  }
+
+  ::-moz-selection {
+    background-color: #1769E8;
+    color: #FFFFFF;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
